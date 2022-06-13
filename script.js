@@ -29,9 +29,11 @@ const inputNumber = (number) => {
 }
 
 const inputOperator = (operator) => {
-    prevNumber = currentNumber;
+    if (calculationOperator === '') {
+        prevNumber = currentNumber;
+    }
     calculationOperator = operator;
-    currentNumber = '';
+    currentNumber = '0';
 }
 const operators = document.querySelectorAll('.operator');
 operators.forEach((operator) => {
@@ -65,6 +67,35 @@ const calculate = () => {
         case '%':
             result = parseFloat(prevNumber) % parseFloat(currentNumber);
             break;
+        case '^':
+            result = parseFloat(prevNumber) * parseFloat(prevNumber);
+            break;
+        case '^3':
+            result = parseFloat(prevNumber) * parseFloat(prevNumber) * parseFloat(prevNumber);
+            break;
+        case '^3':
+            result = parseFloat(prevNumber) * parseFloat(prevNumber) * parseFloat(prevNumber);
+            break;
+        case 'root':
+            result = Math.sqrt(parseFloat(prevNumber));
+            break;
+        case 'sin':
+            result = Math.sin(parseFloat(prevNumber));
+            break;
+        case 'cos':
+            result = Math.cos(parseFloat(prevNumber));
+            break;
+        case 'tan':
+            result = Math.tan(parseFloat(prevNumber));
+            break;
+        case 'log':
+            result = Math.log(parseFloat(prevNumber));
+            break;
+        case 'exp':
+            result = Math.exp(parseFloat(prevNumber));
+            break;
+
+
         default:
             break;
 
@@ -92,5 +123,18 @@ inputDecimal = (dot) => {
 const decimal = document.querySelector('.decimal');
 decimal.addEventListener('click', (event) => {
     inputDecimal(event.target.value)
+    updateScreen(currentNumber)
+})
+
+inputNegative = () => {
+    if (currentNumber === '0') {
+        return
+    } else {
+        currentNumber = currentNumber * -1;
+    }
+}
+const negative = document.querySelector('.negative');
+negative.addEventListener('click', (event) => {
+    inputNegative(event.target.value)
     updateScreen(currentNumber)
 })

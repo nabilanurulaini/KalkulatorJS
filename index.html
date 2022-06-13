@@ -5,16 +5,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Calculator JS</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 
 <body>
-    <div class="Calculator">
+    <div class="calculator">
         <input type="text" class="calculator-screen" value="0" disabled />
         <div class="calculator-keys">
             <div class="row">
-                <button class="all-clear">AC</button>
+                <button class="number all-clear">AC</button>
+                <button class="operator" value="log">log</button>
+                <button class="operator" value="exp">exp</button>
+            </div>
+            <div class="row">
+                <button class="operator" value="root">&#8730</button>
+                <button class="operator" value="sin">sin</button>
+                <button class="operator" value="cos">cos</button>
+                <button class="operator" value="tan">tan</button>
+            </div>
+            <div class="row">
+                <button class="operator" value="^3">x<sup>3</sup></button>
+                <button class="operator" value="^">x<sup>2</sup></button>
                 <button class="operator" value="%">%</button>
                 <button class="operator" value="/">&divide</button>
             </div>
@@ -37,7 +50,8 @@
                 <button class="operator" value="+">+</button>
             </div>
             <div class="row">
-                <button class="number zero-btn" value="0">0</button>
+                <button class="number" value="0">0</button>
+                <button class="negative">&plusmn</button>
                 <button class="decimal" value=".">.</button>
                 <button class="equal-sign">=</button>
 

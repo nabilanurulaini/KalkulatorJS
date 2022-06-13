@@ -1,8 +1,14 @@
+body {
+    background-color: beige;
+}
+
 .calculator {
     text-align: center;
     margin: 0 auto;
-    padding-top: 200px;
+    margin: 50px auto;
     width: 400px;
+    box-shadow: 5px 5px 10px rgb(161, 160, 160);
+    border: #fff solid 20px;
 }
 
 .calculator-keys {
@@ -36,14 +42,13 @@ button {
 
 }
 
-.all-clear,
-.zero-btn {
+.all-clear {
     width: 50%;
 }
 
 .operator,
 .equal-sign {
-    background-color: orange;
+    background-color: burlywood;
 }
 
 button:hover {
@@ -51,7 +56,7 @@ button:hover {
 
 }
 
-.operator-hover,
-.equal-sign.equal-sign::hover {
-    background-color: darkorange;
+.operator:hover,
+.equal-sign.equal-sign:hover {
+    background-color: rgb(231, 173, 96);
 }
